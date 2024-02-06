@@ -55,8 +55,8 @@ def binary_operations():
                 b_int >>= 1
             return format(product, 'b')
 
-        factor1 = input("Enter the first factor in binary: ")
-        factor2 = input("Enter the second factor in binary: ")
+        factor1 = input("Enter the multiplicand in binary: ")
+        factor2 = input("Enter the multiplier in binary: ")
         result = binary_multiplication(factor1, factor2)
         print("Product:", result)
         
@@ -95,8 +95,8 @@ def binary_operations():
 
             return result
 
-        binary1 = input("Enter the first binary number: ")
-        binary2 = input("Enter the second binary number: ")
+        binary1 = input("Enter the first addend number: ")
+        binary2 = input("Enter the second addend number: ")
         print("Sum:", add_binary(binary1, binary2))
 
     elif operation_choice == 5:
