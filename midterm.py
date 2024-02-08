@@ -7,7 +7,7 @@ def binary_operations_menu():
     print("[3] Subtraction")
     print("[4] Addition")
     print("[5] Negative (2's Complement)")
-
+    
 '''Option for Conversion'''
 
 def conversion_menu():
@@ -36,6 +36,15 @@ def binary_operations():
             quotient_bin = format(quotient_int, 'b')
             remainder_bin = format(remainder_int, 'b')
             return quotient_bin, remainder_bin
+        # def binary_division(dividend, divisor):
+        #     dividend_int = int(dividend, 2)
+        #     divisor_int = int(divisor, 2)
+        #     quotient_int = dividend_int // divisor_int
+        #     remainder_int = dividend_int % divisor_int
+        #     quotient_bin = bin(quotient_int)[2:]
+        #     remainder_bin = bin(remainder_int)[2:]
+        #     return quotient_bin, remainder_bin
+
 
         dividend = input("Enter the dividend in binary: ")
         divisor = input("Enter the divisor in binary: ")
@@ -54,6 +63,19 @@ def binary_operations():
                 a_int <<= 1
                 b_int >>= 1
             return format(product, 'b')
+        # def binary_multiplication(a, b):
+        #     product = 0
+        #     a_int = int(a, 2)
+        #     b_int = int(b, 2)
+
+        #     while b_int:
+        #         if b_int & 1:
+        #             product += a_int
+        #         a_int <<= 1
+        #         b_int >>= 1
+
+        #     return bin(product)[2:]
+
 
         factor1 = input("Enter the multiplicand in binary: ")
         factor2 = input("Enter the multiplier in binary: ")
@@ -70,8 +92,18 @@ def binary_operations():
                 return '-' + result_binary
             else:
                 return decimal_to_binary(result_int)
+            
+        # def binary_subtraction(a, b):
+        #     result_int = int(a, 2) - int(b, 2)
+        #     if result_int == 0:
+        #         return '0'
+        #     elif result_int < 0:
+        #         return '-' + bin(-result_int)[2:]
+        #     else:
+        #         return bin(result_int)[2:]
 
-        minuend = input("Enter the minuend in binary: ")
+
+        minuend = input("Enter the minuend (greater number) in binary: ")
         subtrahend = input("Enter the subtrahend in binary: ")
         difference = binary_subtraction(minuend, subtrahend)
         print("Difference:", difference)
@@ -94,6 +126,21 @@ def binary_operations():
                 result = '1' + result
 
             return result
+        
+        # def add_binary(a, b):
+        #     result = ''
+        #     carry = 0
+
+        #     for i in range(max(len(a), len(b)) - 1, -1, -1):
+        #         digit_sum = int(a[i] if i >= len(a) else '0') + int(b[i] if i >= len(b) else '0') + carry
+        #         result = str(digit_sum % 2) + result
+        #         carry = digit_sum // 2
+
+        #     if carry:
+        #         result = '1' + result
+
+        #     return result
+
 
         binary1 = input("Enter the first addend number: ")
         binary2 = input("Enter the second addend number: ")
@@ -115,6 +162,20 @@ def binary_operations():
                     result = bit + result
             
             return result
+
+        # def twos_complement(binary):
+        #     complement = ''.join('1' if bit == '0' else '0' for bit in binary)
+            
+        #     result = ''
+        #     carry = 1
+        #     for bit in complement[::-1]:
+        #         if carry == 1:
+        #             result = str(int(bit) ^ 1) + result
+        #             carry = int(bit) & carry
+        #         else:
+        #             result = bit + result
+            
+        #     return result
 
         binary = input("Enter a binary number: ")
         negative = twos_complement(binary)
