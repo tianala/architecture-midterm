@@ -1,4 +1,4 @@
-from menus import conversion_menu
+from menus import number_sysytem_conversion_menu
 
 def binary_to_decimal(binary):
     decimal = 0
@@ -79,4 +79,4 @@ def octal_to_hexadecimal(octal):
     return decimal_to_hexadecimal(decimal)
 
 def number_system_conversion():
-    conversion_menu()
+    number_sysytem_conversion_menu()
